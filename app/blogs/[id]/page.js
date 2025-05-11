@@ -10,7 +10,7 @@ const BlogPage = ({params}) => {
 
   return (
     <div>
-      <div className='mt-6'>The Blog id is : {id}</div>
+      <div className='mt-6'>The Blog id is : {id}</div> 
     </div>
   )
 }
