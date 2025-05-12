@@ -1,8 +1,9 @@
 import Image from "next/image"; // ⚠️ Add this line at the top
 import React from "react";
 import thumb from "@/public/images/thumb.jpg";
+import Button from "@/app/components/Button";
 // import Image from 'next/image'
-import Button from "@/app/components/button";
+// import Button from "@/app/components/Button";
 
 const page = () => {
   return (
