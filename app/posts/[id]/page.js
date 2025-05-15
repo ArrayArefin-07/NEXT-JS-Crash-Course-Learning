@@ -2,7 +2,16 @@ import getPost from "@/lib/getpost";
 import React from "react";
 import Posts from "../page";
 
-const PostPage = async ({params}) => {
+export async function generateMetadata({ params }) {
+  const { id } = params;
+  const post = await getPost(id);
+  return {
+    title: post.title,
+    description: post.body,
+  };
+}
+
+const PostPage = async ({ params }) => {
   const { id } = params;
   const post = await getPost(id);
 
