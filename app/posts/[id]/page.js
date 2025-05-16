@@ -3,6 +3,7 @@ import React, { Suspense } from "react";
 import Posts from "../page";
 import getPostComments from "@/lib/getPostComment";
 import Comments from "@/app/components/Comments";
+import getAllPosts from "@/lib/getAllPosts";
 
 export async function generateMetadata({ params }) {
   const { id } = params;
@@ -33,5 +34,14 @@ const post = await postPromise;
     </div>
   );
 };
+
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts();
+
+  return posts.map((post) => ({
+    id: post.id.toString(),
+  }));
+}
 
 export default PostPage;
